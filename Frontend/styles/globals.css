@@ -1,0 +1,797 @@
+/* Variables globales */
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #292c4c;
+}
+
+h1{
+    margin: 0;
+    color: white;
+}
+
+label{
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+ul{
+    list-style: none;
+}
+
+/* Estilos a todas las tablas */
+
+table{
+	background-color: white;
+	text-align: center;
+	border-collapse: collapse;
+}
+
+th, td{
+	padding: 20px;
+}
+
+thead{
+	background-color: #246355;
+	border-bottom: solid 5px #0F362D;
+	color: white;
+}
+
+/* Estilos a titulo principal */
+
+.titulo {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    background: linear-gradient(-45deg, #DFB79E, #DFB79E, #280413,
+ #2B0413, #E25D52, #E25D52);
+    background-size: 300%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 4vw;
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-animation: animacion_texto 6s ease-in-out infinite;
+    -webkit-animation: animacion_texto 6s ease-in-out infinite;
+}
+
+@keyframes animacion_texto {
+    0%{
+        background-position: 0px 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0px 50%;
+    }
+}
+
+@media (max-width: 768px){
+    .titulo{
+        font-size: 1.5rem;
+    }
+}
+
+/* Estilos a texto de bienvenida */
+
+.bienvenida{
+    font-family: monospace;
+    font-size: 4rem;
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 28ch;
+    animation: typing 2s steps(21), blink-caret .5s infinite step-end alternate;
+    overflow: hidden;
+}
+
+@keyframes typing{
+    from{width: 0}
+}
+
+@keyframes blink{
+    50%{border-color: transparent}
+}
+
+@media (max-width: 768px){
+    .bienvenida{
+        font-size: 1.5rem;
+        max-width: 28ch;
+    }
+}
+
+/* Estilos a los botones del login y registro */
+
+.boton-login{
+    cursor: pointer;
+    border: none;
+    border-radius: 1rem;
+    background-color: #555555;
+    color: white;
+}
+
+.boton-login:hover{
+    background-color: #333333;
+}
+
+/* Registro usuario */
+
+.registro-usuario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+}
+
+.inputs-registro{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.inputs-registro input{
+    width: 12rem;
+    height: 1.8rem;
+}
+
+/* Login usuario */
+
+.login-usuario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+}
+
+.inputs-login-usuario{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.inputs-login-usuario input{
+    width: 12rem;
+    height: 1.8rem;
+}
+
+/* Login admin */
+
+.login-admin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+}
+
+.inputs-login-admin{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.inputs-login-admin input{
+    width: 12rem;
+    height: 1.8rem;
+}
+
+/* header publico */
+
+.header-public{
+    background-color: #33658A;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: .5rem;
+    margin-bottom: 1rem;                                 
+}
+
+.header-public h1{
+    color: black;
+}
+
+.ul-public{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+@media (max-width: 768px){
+    .ul-public{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+.ul-public a:hover{
+    color: white;
+}
+
+/* Header privado de usuario */
+
+.header-private-user{
+    background-color: #33658A;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: .5rem;
+    margin-bottom: 1rem;                                 
+}
+
+.ul-private-user{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+@media (max-width: 768px){
+    .ul-private-user{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+}
+
+.ul-private-user a:hover{
+    color: white;
+}
+
+/* Header privado de admin */
+
+.header-private-admin{
+    background-color: #33658A;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem;
+    margin-bottom: 1rem;                                 
+}
+
+.header-private-admin h1{
+    color: black;
+}
+
+.ul-private-admin{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+@media (max-width: 768px){
+    .ul-private-admin{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+}
+
+.ul-private-admin a:hover{
+    color: white;
+}
+
+/* Inicio usuario */
+
+.inicio-user{
+    display: grid;
+    place-items: center;
+}
+
+/* Formulario reserva */
+
+.contenedor-crearReservas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.formulario-reserva{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+.formulario-reserva input, select{
+    width: 12rem;
+    height: 1.8rem;
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.formulario-reserva input[type="submit"]{
+    cursor: pointer;
+    background-color: #138D75;
+    border: none;
+    border-radius: 6px;
+    width: 5rem;
+    height: 2rem;
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.formulario-reserva input[type="submit"]:hover{
+    background-color: #0E6655;
+}
+
+/* Ver reservas usuario */
+
+.contenedor-verReservas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (max-width: 768px){
+    .contenedor-verReservas{
+        display: block;
+        overflow-x: auto;
+        text-align: center;
+        padding: 1rem;
+    }
+}
+
+.contenedor-verReservas .editar-reserva{
+    cursor: pointer;
+    background: none;
+    border: 2px solid #F1C40F;
+    border-radius: 6px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    width: 4rem;
+    height: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    margin-right: .5px;
+}
+
+.contenedor-verReservas .editar-reserva:hover{
+    background-color: #B7950B;
+    color: white; 
+}
+
+.contenedor-verReservas .cancelar-reserva{
+    cursor: pointer;
+    background: none;
+    border: 2px solid #C0392B;
+    border-radius: 6px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    width: 4rem;
+    height: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: .5px;
+}
+
+.contenedor-verReservas .cancelar-reserva:hover{
+    background-color: #922B21;
+    color: white;
+}
+
+/* Ver perfil usuario */
+
+.contenedor-verPerfil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contenedor-verPerfil .usuario{
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+}
+
+.contenedor-verPerfil .perfil{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    text-align: start;
+}
+
+.contenedor-verPerfil .perfil p{
+    font-size: 1.5rem;
+    color: whitesmoke;
+}
+
+@media (max-width: 768px) {
+
+    .contenedor-verPerfil .perfil{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: start;
+    }
+
+}
+
+/* Inicio admin */
+
+.inicio-admin{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* Ver todos los usuarios */
+
+.contenedor-verUsuarios{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+
+    .contenedor-verUsuarios{
+        display: block;
+        overflow-x: auto;
+        padding: 1rem;
+        text-align: center;
+    }
+
+}
+
+.contenedor-verUsuarios .editar-autorizado{
+    cursor: pointer;
+    background: none;
+    border: 2px solid #F1C40F;
+    border-radius: 6px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    width: 4rem;
+    height: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    margin-right: .5px;
+}
+
+.contenedor-verUsuarios .editar-autorizado:hover{
+    background-color: #B7950B;
+    color: white; 
+}
+
+.contenedor-verUsuarios .eliminar-usuario{
+    cursor: pointer;
+    background: none;
+    border: 2px solid #C0392B;
+    border-radius: 6px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    width: 4rem;
+    height: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: .5px;
+}
+
+.contenedor-verUsuarios .eliminar-usuario:hover{
+    background-color: #922B21;
+    color: white;
+}
+
+/* editar autorizacion */
+
+.contenedor-editarAutorizacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contenedor-editarAutorizacion form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+}
+
+.contenedor-editarAutorizacion .editar-autorizado{
+    cursor: pointer;
+    background-color: #138D75;
+    border: none;
+    border-radius: 6px;
+    width: 5rem;
+    height: 2rem;
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.contenedor-editarAutorizacion .editar-autorizado:hover{
+    background-color: #0E6655; 
+}
+
+.contenedor-editarAutorizacion a{
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    transition: all 0.5s ease;
+}
+
+.contenedor-editarAutorizacion a:hover{
+    font-size: 2rem;
+}
+
+/* ver todas las maquinas */
+
+.contenedor-verMaquinas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+
+    .contenedor-verMaquinas{
+        display: block;
+        overflow-x: auto;
+        padding: 1rem;
+        text-align: center;
+    }
+
+}
+
+.contenedor-verMaquinas .editar-maquina{
+    cursor: pointer;
+    background: none;
+    border: 2px solid #F1C40F;
+    border-radius: 6px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    width: 4rem;
+    height: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    margin-right: .5px;
+}
+
+.contenedor-verMaquinas .editar-maquina:hover{
+    background-color: #B7950B;
+    color: white; 
+}
+
+.contenedor-verMaquinas .eliminar-maquina{
+    cursor: pointer;
+    background: none;
+    border: 2px solid #C0392B;
+    border-radius: 6px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    width: 4rem;
+    height: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: .5px;
+}
+
+.contenedor-verMaquinas .eliminar-maquina:hover{
+    background-color: #922B21;
+    color: white;
+}
+
+/* Crear mantencion */
+
+.contenedor-crearMantencion{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+
+    .contenedor-crearMantencion{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+}
+
+.formulario-mantencion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.formulario-mantencion input, select{
+    width: 12rem;
+    height: 1.8rem;
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.formulario-mantencion input[type="submit"]{
+    cursor: pointer;
+    background-color: #138D75;
+    border: none;
+    border-radius: 6px;
+    width: 5rem;
+    height: 2rem;
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.formulario-mantencion input[type="submit"]:hover{
+    background-color: #0E6655;
+}
+
+.formulario-notificacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.formulario-notificacion textarea{
+    min-width: 20rem;
+    min-height: 10rem;
+    max-width: 20rem;
+    max-height: 10rem;
+}
+
+.formulario-notificacion input[type="submit"]{
+    cursor: pointer;
+    background-color: #138D75;
+    border: none;
+    border-radius: 6px;
+    width: 5rem;
+    height: 2rem;
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.formulario-notificacion input[type="submit"]:hover{
+    background-color: #0E6655;
+}
+
+/* Ver mantenciones */
+
+.contenedor-verMantenciones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+
+    .contenedor-verMantenciones{
+        display: block;
+        overflow-x: auto;
+        padding: 1rem;
+        text-align: center;
+    }
+
+}
+
+.contenedor-verMantenciones .editar-mantencion{
+    cursor: pointer;
+    background: none;
+    border: 2px solid #F1C40F;
+    border-radius: 6px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    width: 4rem;
+    height: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    margin-right: .5px;
+}
+
+.contenedor-verMantenciones .editar-mantencion:hover{
+    background-color: #B7950B;
+    color: white; 
+}
+
+.contenedor-verMantenciones .eliminar-mantencion{
+    cursor: pointer;
+    background: none;
+    border: 2px solid #C0392B;
+    border-radius: 6px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    width: 4rem;
+    height: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: .5px;
+}
+
+.contenedor-verMantenciones .eliminar-mantencion:hover{
+    background-color: #922B21;
+    color: white;
+}
+
+/* Registrar maquina */
+
+.contenedor-crearMaquina{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.formulario-crearMaquina{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.formulario-crearMaquina input[type="text"]{
+    width: 12rem;
+    height: 1.8rem;
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.formulario-crearMaquina input[type="submit"]{
+    cursor: pointer;
+    background-color: #138D75;
+    border: none;
+    border-radius: 6px;
+    width: 5rem;
+    height: 2rem;
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.formulario-crearMaquina input[type="submit"]:hover{
+    background-color: #0E6655;
+}
+
+.contenedor-crearMaquina a{
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    transition: all 0.5s ease;
+}
+
+.contenedor-crearMaquina a:hover{
+    font-size: 2rem;
+}
+
+/* Generar informe de cobro */
+
+.contenedor-informe{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+
+    .contenedor-informe{
+        display: block;
+        overflow-x: auto;
+        padding: 1rem;
+        text-align: center;
+    }
+
+}
+
+.contenedor-informe .formulario-informe{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.formulario-informe input[type="date"]{
+    width: 12rem;
+    height: 1.8rem;
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+}
